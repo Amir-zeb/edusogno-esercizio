@@ -1,0 +1,1 @@
+export const baseUrl='http://localhost/crud-backend/server.php'

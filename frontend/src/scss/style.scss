@@ -1,0 +1,128 @@
+$primaryBg: #D9E5F3;
+$primaryText: #231F20;
+$LightText: #CCCCCC;
+$primaryHD: #134077;
+$primaryBorder: #2D224C;
+$secondaryBorder: #134077;
+$primaryBorderFocused: #134077;
+$primaryIcon: #0057FF;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: $primaryBg;
+}
+
+.page_content {
+  min-height: 100dvh;
+}
+
+.form-heading {
+  color: $primaryHD;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.form_container {
+  border-radius: 19px;
+  padding: 25px;
+  max-width: 662px;
+  background-color: #fff;
+  border: 1px solid $secondaryBorder;
+  margin: 15px auto 0;
+
+  label {
+    font-size: 13px;
+    color: $primaryText;
+    font-weight: 700;
+  }
+
+  .form-control {
+    border: 0;
+    padding: 0.375rem 0;
+    border-bottom: 1px solid $primaryBorder;
+    border-radius: 0;
+    font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.focused {
+      border-color: 1px solid $primaryBorderFocused;
+    }
+
+    &::placeholder {
+      color: $LightText;
+    }
+  }
+
+  .input-group-text {
+    border: 0;
+    border-bottom: 1px solid $primaryBorder;
+    background-color: #fff;
+    border-radius: 0;
+
+    &.focused {
+      border-color: 1px solid $primaryBorderFocused;
+    }
+  }
+}
+
+.icon_primary {
+  color: $primaryIcon;
+}
+
+.event_cards {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid $secondaryBorder;
+
+  .card-title {
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    color: $primaryText;
+  }
+  
+  .card-text {
+    color: $LightText;
+    font-size: clamp(0.95rem, 1.3vw, 1.6rem);
+  }
+}
+
+.data_not_found{
+  color: $primaryText;
+  font-size: clamp(0.95rem, 1.3vw, 1.6rem);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page_content {
+    background-image: url("/src/assets/bg-img.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+}
+
+@import './header.scss', './toast.scss';
